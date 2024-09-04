@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: ##a5a5a5;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,4 +79,8 @@ body {
 
 .login-container .forgot-password:hover {
     text-decoration: underline;
+}
+
+.button-container{
+    text-align: center;
 }
