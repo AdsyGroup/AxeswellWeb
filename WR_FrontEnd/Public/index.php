@@ -1,30 +1,18 @@
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Resto-Login</title>
-    <link rel="stylesheet" href="../_Global/CSS/login.css">
-</head>
-
-<body>
-    <div class="login-container">
-        <h2>Login</h2>
-        <form action="#">
-            <div class="input-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" placeholder="Username" required>
-            </div>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="text" id="password" name="password" placeholder="Password" required>
-            </div>
-            <button type="submit" class="btn-login">Login</button>
-            <a href="#" class="forgot-password">Forgot Password?</a>
-        </form>
+<?php include 'header.php'; ?>
+<div class="login-container">
+    <h2>Login</h2>
+    <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Username">
     </div>
+    <div class="input-group">
+        <label for="password">Password</label>
+        <input type="text" id="password" placeholder="Password">
+    </div>
+    <button type="submit" class="btn-login">Login</button>
+    <a href="#" class="forgot-password">Forgot Password?</a>
+</div>
 </body>
+<script type="text/javascript" src="../_Global/JS/index.js"></script>
 
 </html>
