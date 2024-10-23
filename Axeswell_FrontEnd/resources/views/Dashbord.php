@@ -14,11 +14,11 @@ include '_headerview.php'; ?>
         </aside>
         <main class="twelve wide column">
             <div class="ui segment elegant-header">
-                <h1 class="ui header">Welcome Back, Jesslyn</h1>
+                <h1 class="ui header">Welcome Back, El</h1>
                 <div class="ui right floated">
                     <div class="ui item">
                         <i class="fas fa-user-circle"></i>
-                        Jesslyn Felicia Kristianto
+                     Adriel Anderson Stefanus
                     </div>
                 </div>
             </div>
