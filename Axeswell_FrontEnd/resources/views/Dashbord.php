@@ -1,44 +1,50 @@
 <?php
 $pageTitle = "DASHBOARD";
-include 'headerview.php'; ?>
+include '_headerview.php'; ?>
 
-<div class="container">
-        
-        <nav class="sidebar">
-            <h2>My Dashboard</h2>
-            <ul>
-                <li><a href="#overview">Overview</a></li>
-                <li><a href="#analytics">Analytics</a></li>
-                <li><a href="#settings">Settings</a></li>
-                <li><a href="#profile">Profile</a></li>
-            </ul>
-        </nav>
-
- 
-        <div class="main-content">
- 
-            <header class="header">
-                <h1>Welcome, Jesslyn</h1>
-                <div class="profile">
-                    <img src="profile.jpg" alt="Profile" class="profile-img">
-                    <span>Jesslyn</span>
+<div class="ui grid container" style="min-height: 100vh; padding-top: 20px;">
+        <aside class="four wide column">
+            <div class="ui vertical fluid menu elegant-menu">
+                <div class="header item">Dashboard</div>
+                <a class="item"><i class="fas fa-home"></i> Home</a>
+                <a class="item"><i class="fas fa-user"></i> Profile</a>
+                <a class="item"><i class="fas fa-chart-bar"></i> Statistics</a>
+                <a class="item"><i class="fas fa-cog"></i> Settings</a>
+            </div>
+        </aside>
+        <main class="twelve wide column">
+            <div class="ui segment elegant-header">
+                <h1 class="ui header">Welcome Back, Jesslyn</h1>
+                <div class="ui right floated">
+                    <div class="ui item">
+                        <i class="fas fa-user-circle"></i>
+                        Jesslyn Felicia Kristianto
+                    </div>
                 </div>
-            </header>
-
- 
-            <section class="content">
-                <div class="overview">
-                    <h2>Overview</h2>
-                    <p>Here is your dashboard overview.</p>
+            </div>
+            <section class="ui three stackable cards">
+                <div class="card elegant-card">
+                    <div class="content">
+                        <div class="header">Total Views</div>
+                        <div class="description">10,235</div>
+                    </div>
                 </div>
-                <div class="analytics">
-                    <h2>Analytics</h2>
-                    <p>Analytics data will appear here.</p>
+                <div class="card elegant-card">
+                    <div class="content">
+                        <div class="header">Total Likes</div>
+                        <div class="description">2,389</div>
+                    </div>
                 </div>
-                <div class="settings">
-                    <h2>Settings</h2>
-                    <p>Manage your settings here.</p>
+                <div class="card elegant-card">
+                    <div class="content">
+                        <div class="header">Total Comments</div>
+                        <div class="description">521</div>
+                    </div>
                 </div>
             </section>
-        </div>
+            <section class="ui segment">
+                <h2 class="ui header">Statistics Overview</h2>
+                <canvas id="myChart"></canvas>
+            </section>
+        </main>
     </div>

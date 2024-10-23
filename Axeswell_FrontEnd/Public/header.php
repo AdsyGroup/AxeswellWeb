@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WEBSITE RESTO - <?php echo isset($pageTitle) ? $pageTitle : 'Default Title'; ?></title>
+    <title>WEBSITE EL - <?php echo isset($pageTitle) ? $pageTitle : 'Default Title'; ?></title>
     <!-- Memanggil jQuery -->
     <script type="text/javascript" src="../_Global/JS/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="../_Global/JS/jquery-ui.js"></script>
