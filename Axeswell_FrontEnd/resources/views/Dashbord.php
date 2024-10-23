@@ -8,7 +8,7 @@ include '_headerview.php'; ?>
                 <div class="header item">Dashboard</div>
                 <a class="item active" id="TabHome"><i class="fas fa-home"></i> Home</a>
                 <a class="item" id="TabProfile"><i class="fas fa-user"></i> Profile</a>
-                <a class="item"><i class="fas fa-chart-bar"></i> Statistics</a>
+                <a class="item"><i class="fas fa-chart-bar"></i> To Do List</a>
                 <a class="item"><i class="fas fa-cog"></i> Settings</a>
             </div>
         </aside>
