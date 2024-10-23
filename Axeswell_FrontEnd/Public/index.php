@@ -3,13 +3,13 @@ $pageTitle = "LOGIN";
 include 'header.php'; ?>
 
 <div class="login-container">
-    <h2>Login</h2>
+    <h2>LOGIN</h2>
     <div class="input-group">
-        <label for="username">Username</label>
+        <label for="username">USERNAME</label>
         <input type="text" id="username" placeholder="Username">
     </div>
     <div class="input-group">
-        <label for="password">Password</label>
+        <label for="password">PASSWORD</label>
         <input type="password" id="password" placeholder="Password">
     </div>
     <div class="input-group">
