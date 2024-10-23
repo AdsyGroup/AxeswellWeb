@@ -1,0 +1,9 @@
+.item.active {
+    background-color: #2185d0; /* Warna biru Semantic UI */
+    color: white; /* Agar teks terlihat lebih kontras */
+    border-radius: 5px;
+}
+
+.item.active:hover {
+    background-color: #1678c2; /* Warna biru lebih gelap saat dihover */
+}

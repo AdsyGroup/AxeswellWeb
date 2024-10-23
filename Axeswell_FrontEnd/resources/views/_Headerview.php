@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="../../_Global/Framework/sweetalert2/dist/sweetalert2.css">
     <link rel="stylesheet" href="../../_Global/Framework/sweetalert2/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="../../_Global/CSS/Dashboard.css">
-
+    <link rel="stylesheet" href="../../_Global/CSS/Global.css">
     <!-- Memanggil Favicon -->
     <link rel="icon" type="image/png" href="../../_Global/CSS/pngegg.ico">
 
