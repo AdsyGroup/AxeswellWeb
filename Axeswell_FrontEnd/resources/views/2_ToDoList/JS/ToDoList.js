@@ -1,5 +1,14 @@
 let todos = [];
 
+// Load todos from local storage when the page loads
+window.onload = function() {
+    const storedTodos = localStorage.getItem('todos');
+    if (storedTodos) {
+        todos = JSON.parse(storedTodos);
+        renderTodoList();
+    }
+};
+
 function openTodoModal() {
     document.getElementById('todoModal').style.display = 'block';
 }
@@ -30,6 +39,7 @@ function addTodo() {
             dateTime
         };
         todos.push(todoItem);
+        saveTodosToLocalStorage(); // Save to local storage
         renderTodoList();
         closeTodoModal();
     }
@@ -55,6 +65,7 @@ function renderTodoList() {
 
 function deleteTodo(index) {
     todos.splice(index, 1);
+    saveTodosToLocalStorage(); // Save updated todos to local storage
     renderTodoList();
 }
 
@@ -66,12 +77,23 @@ function closeSaveUploadModal() {
     document.getElementById('saveUploadModal').style.display = 'none';
 }
 
+function saveTodosToLocalStorage() {
+    localStorage.setItem('todos', JSON.stringify(todos));
+}
+
 function saveTasksToNotepad() {
     const blob = new Blob([JSON.stringify(todos, null, 2)], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
+    const date = new Date();
+
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+
+    let currentDate = `${day}-${month}-${year}`;
     a.href = url;
-    a.download = 'todos.txt';
+    a.download = 'task_el_' + currentDate + '.txt';
     a.click();
     URL.revokeObjectURL(url);
 }
@@ -82,6 +104,7 @@ function uploadTasks() {
     reader.onload = function (e) {
         const uploadedTasks = JSON.parse(e.target.result);
         todos = todos.concat(uploadedTasks);
+        saveTodosToLocalStorage(); // Save updated todos to local storage
         renderTodoList();
     };
     reader.readAsText(file);
