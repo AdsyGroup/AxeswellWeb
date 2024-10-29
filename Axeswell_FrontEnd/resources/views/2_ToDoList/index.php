@@ -2,7 +2,6 @@
 $pageTitle = "TO DO LIST";
 include 'HeaderToDoList.php'; ?>
 
-
 <div class="todo-container">
     <h1>To-Do List</h1>
     
@@ -21,24 +20,22 @@ include 'HeaderToDoList.php'; ?>
     </button>
 </div>
 
-
 <div id="todoModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeTodoModal()">&times;</span>
-        <h2>Add New Task</h2>
+        <h2 id="modalTitle">Add New Task</h2>
         
         <!-- Title and Description Inputs -->
         <input type="text" id="todoTitle" placeholder="Task Title" required>
         <textarea id="todoDescription" placeholder="Task Description" required></textarea>
         
-
         <input type="text" id="todoCategory" placeholder="Task Category" required>
         
         <!-- Date and Time Input -->
         <label for="taskDateTime">Date and Time:</label>
         <input type="datetime-local" id="taskDateTime">
         
-        <button class="ui button" onclick="addTodo()">Add Task</button>
+        <button class="ui button" id="modalActionButton" onclick="addTodo()">Add Task</button>
     </div>
 </div>
 
@@ -57,5 +54,3 @@ include 'HeaderToDoList.php'; ?>
         <input type="file" class="file-upload" id="fileUpload" accept=".txt" onchange="uploadTasks()">
     </div>
 </div>
-
-

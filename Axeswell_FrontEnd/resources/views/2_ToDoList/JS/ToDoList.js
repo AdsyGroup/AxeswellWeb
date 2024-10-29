@@ -1,4 +1,5 @@
 let todos = [];
+let editIndex = -1; // To keep track of the index of the task being edited
 
 // Load todos from local storage when the page loads
 window.onload = function() {
@@ -11,6 +12,10 @@ window.onload = function() {
 
 function openTodoModal() {
     document.getElementById('todoModal').style.display = 'block';
+    clearModalFields();
+    editIndex = -1; // Reset the edit index when opening the modal for a new task
+    document.getElementById('modalTitle').innerText = 'Add New Task';
+    document.getElementById('modalActionButton').innerText = 'Add Task';
 }
 
 function closeTodoModal() {
@@ -32,14 +37,15 @@ function addTodo() {
     const dateTime = document.getElementById('taskDateTime').value;
 
     if (title && description && category) {
-        const todoItem = {
-            title,
-            description,
-            category,
-            dateTime
-        };
-        todos.push(todoItem);
-        saveTodosToLocalStorage(); // Save to local storage
+        const todoItem = { title, description, category, dateTime };
+        if (editIndex === -1) {
+            // Adding a new task
+            todos.push(todoItem);
+        } else {
+            // Editing an existing task
+            todos[editIndex] = todoItem;
+        }
+        saveTodosToLocalStorage();
         renderTodoList();
         closeTodoModal();
     }
@@ -61,6 +67,20 @@ function renderTodoList() {
         `;
         todoList.appendChild(li);
     });
+}
+
+function editTodo(index) {
+    editIndex = index; // Set the edit index
+    const todo = todos[index];
+    document.getElementById('todoTitle').value = todo.title;
+    document.getElementById('todoDescription').value = todo.description;
+    document.getElementById('todoCategory').value = todo.category;
+    document.getElementById('taskDateTime').value = todo.dateTime;
+
+    document.getElementById('modalTitle').innerText = 'Edit Task';
+    document.getElementById('modalActionButton').innerText = 'Update Task';
+
+    openTodoModal(); // Open the modal to edit
 }
 
 function deleteTodo(index) {
