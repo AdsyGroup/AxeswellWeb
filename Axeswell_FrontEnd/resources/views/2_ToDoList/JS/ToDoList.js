@@ -104,7 +104,7 @@ function uploadTasks() {
     reader.onload = function (e) {
         const uploadedTasks = JSON.parse(e.target.result);
         todos = todos.concat(uploadedTasks);
-        saveTodosToLocalStorage(); // Save updated todos to local storage
+        saveTodosToLocalStorage();
         renderTodoList();
     };
     reader.readAsText(file);
